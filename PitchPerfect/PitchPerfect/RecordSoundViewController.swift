@@ -24,6 +24,7 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
         stopRecordingButton.isEnabled = false
     }
     override func viewWillAppear(_ animated: Bool) {
+        configuringUI(recordingLabelText: "Tap to record. ", stopRecordingButtonState: false, recordButtonState: true)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
