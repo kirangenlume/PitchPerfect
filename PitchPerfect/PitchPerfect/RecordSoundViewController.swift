@@ -24,18 +24,16 @@ class RecordSoundViewController: UIViewController, AVAudioRecorderDelegate {
         stopRecordingButton.isEnabled = false
     }
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         configuringUI(recordingLabelText: "Tap to record. ", stopRecordingButtonState: false, recordButtonState: true)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     var audioRecorder: AVAudioRecorder!
     @IBAction func recordAudio(_ sender: Any) {
-       /* recordingLabel.text = "Recording in progress. "
-        stopRecordingButton.isEnabled = true
-        recordButton.isEnabled = false*/
+
         configuringUI(recordingLabelText: "Recording in progress. ", stopRecordingButtonState: true, recordButtonState: false)
         
         let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
